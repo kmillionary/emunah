@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Emunáh - Servicios de catering, renta de sillas y mesas para eventos, mantelería y música en vivo">
+    <title>Emunáh - Catering & Eventos</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Tipografías elegantes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emunah-cream': '#F5F1E8',
+                        'emunah-dark': '#1A1A1A',
+                        'emunah-taupe': '#A69B8C',
+                        'emunah-light-taupe': '#C4B9A8',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="font-sans text-emunah-dark bg-emunah-cream">
+
+    <!-- Header -->
+    <header
+        class="fixed top-0 left-0 right-0 z-40 bg-emunah-cream/95 backdrop-blur-sm shadow-sm transition-all duration-300"
+        id="header">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="font-serif text-3xl md:text-4xl font-light tracking-wide">
+                Emunáh
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center space-x-8 font-sans text-sm tracking-wider">
+                <li><a href="#servicios" class="hover:text-emunah-taupe transition-colors">SERVICIOS</a></li>
+                <li><a href="#galeria" class="hover:text-emunah-taupe transition-colors">GALERÍA</a></li>
+                <li><a href="#about" class="hover:text-emunah-taupe transition-colors">NOSOTROS</a></li>
+                <li><a href="#contacto" class="hover:text-emunah-taupe transition-colors">CONTACTO</a></li>
+            </ul>
+
+            <!-- CTA Button -->
+            <a href="https://wa.me/50246919387?text=Hola,%20me%20gustaría%20cotizar%20un%20evento" target="_blank"
+                rel="noopener noreferrer"
+                class="hidden md:block bg-emunah-dark text-emunah-cream px-6 py-2.5 text-sm tracking-wider hover:bg-emunah-taupe transition-colors">
+                COTIZAR
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden z-50 relative" id="menuButton" aria-label="Toggle menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Sidebar Menu -->
+    <div class="fixed inset-0 z-50 pointer-events-none" id="mobileMenu">
+        <div class="mobile-menu-overlay" id="menuOverlay"></div>
+        <aside class="mobile-menu-sidebar">
+            <nav class="flex flex-col space-y-8 p-8 pt-24">
+                <a href="#servicios" class="menu-link font-serif text-3xl">Servicios</a>
+                <a href="#galeria" class="menu-link font-serif text-3xl">Galería</a>
+                <a href="#about" class="menu-link font-serif text-3xl">Nosotros</a>
+                <a href="#contacto" class="menu-link font-serif text-3xl">Contacto</a>
+                <a href="https://wa.me/50246919387?text=Hola,%20me%20gustaría%20cotizar%20un%20evento" target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-emunah-dark text-emunah-cream px-8 py-3 text-center text-sm tracking-wider mt-8 inline-block hover:bg-emunah-taupe transition-colors">
+                    COTIZAR EVENTO
+                </a>
+            </nav>
+        </aside>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Hero Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="images/hero.jpg" alt="Emunáh Eventos" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-emunah-dark/40"></div>
+        </div>
+
+        <div class="hero-content text-center relative z-10">
+            <h1 class="hero-title font-serif font-light text-white">
+                Emunáh
+            </h1>
+            <p class="mt-8 text-lg md:text-xl tracking-widest font-sans text-emunah-cream uppercase">
+                Elegancia en cada detalle
+            </p>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+            <i data-lucide="chevron-down" class="w-6 h-6 text-emunah-cream"></i>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-5xl md:text-6xl font-light mb-4">Nuestros Servicios</h2>
+                <div class="w-24 h-0.5 bg-emunah-taupe mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Servicio 1: Catering -->
+                <div class="service-card group">
+                    <div class="aspect-square bg-emunah-cream mb-6 overflow-hidden relative">
+                        <img src="images/servicio-catering.jpg" alt="Servicio de Catering"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3">Catering</h3>
+                    <p class="text-emunah-taupe text-sm leading-relaxed">
+                        Menús personalizados con ingredientes de la más alta calidad para tu evento especial.
+                    </p>
+                </div>
+
+                <!-- Servicio 2: Mobiliario -->
+                <div class="service-card group">
+                    <div class="aspect-square bg-emunah-cream mb-6 overflow-hidden relative">
+                        <img src="images/servicio-mesas-sillas.jpg" alt="Renta de Mesas y Sillas"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3">Mobiliario</h3>
+                    <p class="text-emunah-taupe text-sm leading-relaxed">
+                        Renta de sillas y mesas elegantes que complementan perfectamente tu celebración.
+                    </p>
+                </div>
+
+                <!-- Servicio 3: Mantelería -->
+                <div class="service-card group">
+                    <div class="aspect-square bg-emunah-cream mb-6 overflow-hidden relative">
+                        <img src="images/servicio-manteleria.jpg" alt="Servicio de Mantelería"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3">Mantelería</h3>
+                    <p class="text-emunah-taupe text-sm leading-relaxed">
+                        Manteles, servilletas y textiles de alta calidad en diversos colores y estilos.
+                    </p>
+                </div>
+
+                <!-- Servicio 4: Música -->
+                <div class="service-card group">
+                    <div class="aspect-square bg-emunah-cream mb-6 overflow-hidden relative">
+                        <img src="images/servicio-violin.jpg" alt="Servicio de Violín"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3">Violín</h3>
+                    <p class="text-emunah-taupe text-sm leading-relaxed">
+                        Música en vivo con violín para crear una atmósfera única y memorable.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Galería Section -->
+    <section id="galeria" class="py-24 bg-emunah-cream">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-5xl md:text-6xl font-light mb-4">Galería</h2>
+                <div class="w-24 h-0.5 bg-emunah-taupe mx-auto"></div>
+                <p class="mt-6 text-emunah-taupe max-w-2xl mx-auto">
+                    Descubre algunos de nuestros eventos más memorables
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Gallery items -->
+                <div class="gallery-item aspect-square overflow-hidden">
+                    <img src="images/emunah-eventos-elegantes.jpeg" alt="Eventos elegantes Emunah"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="gallery-item aspect-square overflow-hidden">
+                    <img src="images/emunah-sillas.jpeg" alt="Sillas para eventos"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="gallery-item aspect-square overflow-hidden">
+                    <img src="images/emunah-manteleria.jpeg" alt="Mantelería de calidad"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="gallery-item aspect-square overflow-hidden">
+                    <img src="images/emunha-mesas.jpeg" alt="Mesas elegantes"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="gallery-item aspect-square overflow-hidden">
+                    <img src="images/emunha-sillas-y-mesas.jpeg" alt="Sillas y mesas para eventos"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="gallery-item aspect-square overflow-hidden">
+                    <img src="images/emunha-baby-shower.jpeg" alt="Baby shower event"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="gallery-item aspect-square overflow-hidden">
+                    <img src="images/emunah-eventos.jpeg" alt="Eventos Emunáh"
+                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-serif text-5xl md:text-6xl font-light mb-8">Sobre Emunáh</h2>
+                <div class="w-24 h-0.5 bg-emunah-taupe mx-auto mb-12"></div>
+                <p class="text-lg leading-relaxed text-emunah-taupe mb-6">
+                    En Emunáh, creemos que cada evento es una oportunidad para crear momentos inolvidables.
+                    Con años de experiencia en el sector de catering y eventos, nos especializamos en ofrecer
+                    servicios integrales que transforman tus celebraciones en experiencias únicas.
+                </p>
+                <p class="text-lg leading-relaxed text-emunah-taupe">
+                    Desde la elegancia de nuestro mobiliario hasta la exquisitez de nuestros menús,
+                    cada detalle es cuidadosamente seleccionado para superar tus expectativas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="py-24 bg-emunah-dark text-emunah-cream">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-serif text-5xl md:text-6xl font-light mb-4">Contacto</h2>
+                    <div class="w-24 h-0.5 bg-emunah-taupe mx-auto"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Información de Contacto -->
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="font-serif text-2xl mb-4">Hablemos de tu evento</h3>
+                            <p class="text-emunah-light-taupe mb-8">
+                                Estamos aquí para hacer realidad la celebración de tus sueños.
+                                Contáctanos para una cotización personalizada.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- <div class="flex items-start space-x-4">
+                                <i data-lucide="mail" class="w-5 h-5 text-emunah-taupe mt-1"></i>
+                                <div>
+                                    <p class="font-sans text-sm tracking-wider mb-1">EMAIL</p>
+                                    <a href="mailto:info@emunah.com"
+                                        class="text-emunah-cream hover:text-emunah-taupe transition-colors">
+                                        info@emunah.com
+                                    </a>
+                                </div>
+                            </div> -->
+
+                            <div class="flex items-start space-x-4">
+                                <i data-lucide="smartphone" class="w-5 h-5 text-emunah-taupe mt-1"></i>
+                                <div>
+                                    <p class="font-sans text-sm tracking-wider mb-1">WHATSAPP</p>
+                                    <div class="space-y-2">
+                                        <a href="https://wa.me/50246919387?text=Hola,%20me%20gustaría%20cotizar%20un%20evento"
+                                            target="_blank" rel="noopener noreferrer"
+                                            class="text-emunah-cream hover:text-emunah-taupe transition-colors block">
+                                            +502 4691-9387
+                                        </a>
+                                        <a href="https://wa.me/50234375826?text=Hola,%20me%20gustaría%20cotizar%20un%20evento"
+                                            target="_blank" rel="noopener noreferrer"
+                                            class="text-emunah-cream hover:text-emunah-taupe transition-colors block">
+                                            +502 3437-5826
+                                        </a>
+                                        <a href="https://wa.me/50254608442?text=Hola,%20me%20gustaría%20cotizar%20un%20evento"
+                                            target="_blank" rel="noopener noreferrer"
+                                            class="text-emunah-cream hover:text-emunah-taupe transition-colors block">
+                                            +502 5460-8442
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-emunah-taupe mt-1"></i>
+                                <div>
+                                    <p class="font-sans text-sm tracking-wider mb-1">UBICACIÓN</p>
+                                    <p class="text-emunah-cream">Guatemala</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Imagen de Contacto -->
+                    <div class="relative h-[400px] md:h-[500px] overflow-hidden rounded-sm">
+                        <img src="images/emunha-contacto.jpeg" alt="Eventos Emunáh"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emunah-dark text-emunah-cream py-16 border-t border-emunah-taupe/20">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h2 class="font-serif text-7xl md:text-9xl font-light mb-8 tracking-wider">
+                    Emunáh
+                </h2>
+                <p class="text-emunah-taupe text-sm tracking-widest mb-8">
+                    CATERING & EVENTOS
+                </p>
+
+                <!-- Social Links -->
+                <!-- <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-emunah-taupe hover:text-emunah-cream transition-colors">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-emunah-taupe hover:text-emunah-cream transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-emunah-taupe hover:text-emunah-cream transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </a>
+                </div> -->
+
+                <div class="border-t border-emunah-taupe/20 pt-8">
+                    <p class="text-emunah-taupe text-xs">
+                        © 2025 Emunáh. Todos los derechos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

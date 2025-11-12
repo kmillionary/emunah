@@ -1,0 +1,265 @@
+/* ==========================================
+   EMUNÁH - Custom Styles
+   ========================================== */
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   HEADER ANIMATIONS
+   ========================================== */
+#header {
+    transition: all 0.3s ease;
+}
+
+#header.scrolled {
+    padding: 0.75rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   HAMBURGER MENU
+   ========================================== */
+.hamburger {
+    width: 28px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 2px;
+    background-color: #1A1A1A;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ==========================================
+   MOBILE MENU
+   ========================================== */
+.mobile-menu-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(26, 26, 26, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-menu-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    max-width: 320px;
+    background-color: #F5F1E8;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+#mobileMenu.active {
+    pointer-events: auto;
+}
+
+#mobileMenu.active .mobile-menu-overlay {
+    opacity: 1;
+}
+
+#mobileMenu.active .mobile-menu-sidebar {
+    transform: translateX(0);
+}
+
+.menu-link {
+    display: block;
+    color: #1A1A1A;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #A69B8C;
+    transform: translateX(8px);
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero-section {
+    padding-top: 80px;
+}
+
+.hero-title {
+    font-size: clamp(4rem, 15vw, 12rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* Efecto de parallax/desfase en el título */
+.hero-title {
+    background: linear-gradient(135deg,
+            #1A1A1A 0%,
+            #1A1A1A 40%,
+            #A69B8C 40%,
+            #A69B8C 60%,
+            #1A1A1A 60%,
+            #1A1A1A 100%);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 8s ease infinite, fadeInUp 1.2s ease-out;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   SERVICE CARDS
+   ========================================== */
+.service-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ==========================================
+   GALLERY GRID
+   ========================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.gallery-item {
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   FORM STYLES
+   ========================================== */
+#contactForm input:focus,
+#contactForm textarea:focus {
+    outline: none;
+}
+
+/* ==========================================
+   SCROLL ANIMATIONS
+   ========================================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: clamp(3rem, 12vw, 6rem);
+    }
+
+    .mobile-menu-sidebar {
+        width: 85%;
+    }
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+.section-padding {
+    padding: 6rem 0;
+}
+
+@media (min-width: 768px) {
+    .section-padding {
+        padding: 8rem 0;
+    }
+}
+
+/* Loading animation (optional) */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
