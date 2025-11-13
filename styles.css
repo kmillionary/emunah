@@ -115,6 +115,22 @@ body {
     padding-top: 80px;
 }
 
+/* Posiciona el contenido en la parte superior en móvil */
+.hero-content {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        position: static;
+        padding: 0;
+    }
+}
+
 .hero-title {
     font-size: clamp(4rem, 15vw, 12rem);
     line-height: 0.9;
